@@ -19,8 +19,7 @@
  * sumOdds([3, 7, 8, 15, 2, 1, 13]) -> 39
  */
 function sumOdds(numbers) {
-  let temp = numbers.filter((x) => x % 2 !== 0);
-  return temp.reduce((x, y) => y + x);
+  return numbers.filter((x) => x % 2 !== 0).reduce((x, y) => y + x);
 
   // Your code here
 }
@@ -66,8 +65,8 @@ function characterCount(string, c) {
 function largestIncrement(numbers) {
   // Your code here
   let max = 0;
-  numbers.forEach((x, y, z) => {
-    if (z[y + 1] - x > max) max = z[y + 1] - x;
+  numbers.forEach((element, index, array) => {
+    if (array[index + 1] - element > max) max = array[index + 1] - element;
   });
   return max;
 }
@@ -86,8 +85,8 @@ function largestIncrement(numbers) {
  */
 function afterX(numbers, x) {
   let temp = [];
-  numbers.forEach((a, b, c) => {
-    if (a === x) temp = c.splice(b + 1, c.length);
+  numbers.forEach((element, index, array) => {
+    if (element === x) temp = array.splice(index + 1, array.length);
   });
   return temp;
 }
