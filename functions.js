@@ -91,7 +91,7 @@ function afterX(numbers, x) {
   });
   return temp;
 }
-console.log(afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
+// console.log(afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
 
 /**
  * abbreviate(firstName, lastName):
@@ -105,6 +105,11 @@ console.log(afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
  * Hint: Use string method .toUpperCase()
  */
 function abbreviate(firstName, lastName) {
+  firstName = firstName.toUpperCase();
+  lastName = lastName.toUpperCase();
+
+  return firstName.charAt(0) + lastName.charAt(0);
+
   // Your code here
 }
 // console.log(abbreviate("miss", "Stephane"));
@@ -121,6 +126,12 @@ function abbreviate(firstName, lastName) {
  */
 function isUpperCase(string) {
   // Your code here
+  let stringArray = Array.from(string);
+  let bol = true;
+  stringArray.forEach((x) => {
+    if (x !== x.toUpperCase()) bol = false;
+  });
+  return bol;
 }
 
 // console.log(isUpperCase("JCREW"));
@@ -137,8 +148,13 @@ function isUpperCase(string) {
  */
 function elementInArray(numbers, x) {
   // Your code here
+  let bol = false;
+  numbers.forEach((num) => {
+    if (num === x) bol = true;
+  });
+  return bol;
 }
-// console.log(elementInArray([5, 6, 7], 8));
+console.log(elementInArray([5, 6, 7], 8));
 
 module.exports = {
   sumOdds,
