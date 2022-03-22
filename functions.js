@@ -19,6 +19,9 @@
  * sumOdds([3, 7, 8, 15, 2, 1, 13]) -> 39
  */
 function sumOdds(numbers) {
+  let temp = numbers.filter((x) => x % 2 !== 0);
+  return temp.reduce((x, y) => y + x);
+
   // Your code here
 }
 // console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
@@ -37,7 +40,10 @@ function sumOdds(numbers) {
  * Another Hint: Use string methods to make it case-insensitive
  */
 function characterCount(string, c) {
-  // Your code here
+  string = string.toLowerCase();
+  c = c.toLowerCase();
+  let stringArray = Array.from(string);
+  return stringArray.filter((x) => x === c).length;
 }
 // console.log(characterCount("Character Count is clever", "c"));
 
@@ -59,8 +65,13 @@ function characterCount(string, c) {
  */
 function largestIncrement(numbers) {
   // Your code here
+  let max = 0;
+  numbers.forEach((x, y, z) => {
+    if (z[y + 1] - x > max) max = z[y + 1] - x;
+  });
+  return max;
 }
-// console.log(largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]));
+console.log(largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]));
 
 /**
  * afterX(numbers, x):
