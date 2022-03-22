@@ -154,7 +154,7 @@ function elementInArray(numbers, x) {
   });
   return bol;
 }
-console.log(elementInArray([5, 6, 7], 8));
+// console.log(elementInArray([5, 6, 7], 8));
 
 module.exports = {
   sumOdds,
