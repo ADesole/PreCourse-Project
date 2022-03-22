@@ -71,7 +71,7 @@ function largestIncrement(numbers) {
   });
   return max;
 }
-console.log(largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]));
+// console.log(largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]));
 
 /**
  * afterX(numbers, x):
@@ -85,9 +85,13 @@ console.log(largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]));
  * afterX([11, 35, 52, 14, 56, 601, 777, 888, 999], 52) -> [14, 56, 601, 777, 888, 999]
  */
 function afterX(numbers, x) {
-  // Your code here
+  let temp = [];
+  numbers.forEach((a, b, c) => {
+    if (a === x) temp = c.splice(b + 1, c.length);
+  });
+  return temp;
 }
-// console.log(afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
+console.log(afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
 
 /**
  * abbreviate(firstName, lastName):
